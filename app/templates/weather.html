@@ -6,6 +6,7 @@
 -->
 
 
+
 </style>
 <head>
     <meta charset="UTF-8">
@@ -22,7 +23,18 @@
     Погода на сегодня {{ data_now }}
 </h1>
 <div>
-    {{ data_weather.weather.main }}
+    <p>
+        Город: {{ data_weather.city }}
+    </p>
+    <p>
+        Температура: {{ data_weather.temp }}
+    </p>
+    <p>
+        Влажность: {{ data_weather.humidity }}
+    </p>
+    <p>
+        Давление: {{ data_weather.pressure }}
+    </p>
 </div>
 </body>
 </html>
