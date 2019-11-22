@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<style type="text/css">
+<!--
+.tab { margin-left: 40px; }
+-->
+
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Погода</title>
+</head>
+<body>
+<div>Категории:
+    <a class="tab" href="{{ url_for('index') }}">Домашняя страница </a>
+    <a class="tab" href="{{ url_for('courses') }}">Курсы валют </a>
+    <a class="tab" href="{{ url_for('movies') }}">Фильмы </a>
+    <a class="tab" href="{{ url_for('weather') }}">Погода </a>
+</div>
+<h1>
+    Погода на сегодня {{ data_now }}
+</h1>
+<div>
+    {{ data_weather.weather.main }}
+</div>
+</body>
+</html>

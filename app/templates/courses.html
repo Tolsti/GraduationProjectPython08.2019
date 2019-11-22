@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<style type="text/css">
+<!--
+.tab { margin-left: 40px; }
+-->
+
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Курсы валют</title>
+</head>
+<body>
+<div>Категории:
+    <a class="tab" href="{{ url_for('index') }}">Домашняя страница </a>
+    <a class="tab" href="{{ url_for('courses') }}">Курсы валют </a>
+    <a class="tab" href="{{ url_for('movies') }}">Фильмы </a>
+    <a class="tab" href="{{ url_for('weather') }}">Погода </a>
+</div>
+<h1>
+    Курсы валют на сегодня {{ data_now }}
+</h1>
+<div>
+    {% for rate in rates %}
+    <div>
+        За {{ rate.Cur_Scale }} {{ rate.Cur_Name }} {{ rate.Cur_OfficialRate }} бел. рублей
+    </div>
+    {% endfor %}
+</div>
+</body>
+</html>
