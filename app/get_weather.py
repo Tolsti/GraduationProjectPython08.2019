@@ -5,7 +5,8 @@ from pprint import pprint
 # appid = '94d8b74c4d0c302754e1af1f42419289'
 # http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID={APIKEY}
 # pro.openweathermap.org/data/2.5/forecast/hourly?id=524901
-
+# def get_html():
+#     url=
 def get_weather_city(city = 'Minsk'):
     app_id = "94d8b74c4d0c302754e1af1f42419289"
     data = dict()
