@@ -1,5 +1,6 @@
 import requests, flask_wtf, wtforms, wtforms.validators
 
+
 # appid = '94d8b74c4d0c302754e1af1f42419289'
 # http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID={APIKEY}
 
