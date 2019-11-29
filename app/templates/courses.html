@@ -6,6 +6,8 @@
 -->
 
 
+
+
 </style>
 <head>
     <meta charset="UTF-8">
@@ -19,8 +21,32 @@
     <a class="tab" href="{{ url_for('weather') }}">Погода </a>
 </div>
 <h1>
-    Курсы валют на сегодня {{ data_now }}
+    Курсы валют на {{ rates.0.Date[0:-9] }}
 </h1>
+<div>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.date.label }}<br>
+            {{ form.date(size=20, placeholder="ГГГГ-ММ-ДД") }}
+            {% for error in form.date.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.button() }}
+        </p>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+    </form>
+</div>
 <div>
     {% for rate in rates %}
     <div>

@@ -1,10 +1,9 @@
-import datetime
-from flask import render_template, url_for
+import datetime, requests
+from flask import render_template, url_for, flash, redirect
 from app import app
-from app.get_films import data_films
-from app.get_courses import rates
-from app.get_weather import get_weather_city
-
+from app.get_films import get_data_films
+from app.get_courses import get_data_courses, CoursesForm
+from app.get_weather import get_data_weather_city, CityForm
 
 
 @app.route('/')
@@ -13,17 +12,19 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/courses')
+@app.route('/courses', methods=['GET', 'POST'])
 def courses():
-    return render_template('courses.html', data_now = datetime.datetime.now().date(), rates = rates)
+    form = CoursesForm(csrf_enabled=False)
+    return render_template('courses.html', rates=get_data_courses(form.date.data), form=form)
 
 
 @app.route('/movies')
 def movies():
-    return render_template('movies.html', data_now = datetime.datetime.now().date(), data_films = data_films)
+    return render_template('movies.html', data_now=datetime.datetime.now().date(), data_films=get_data_films())
 
 
-@app.route('/weather')
+@app.route('/weather', methods=['GET', 'POST'])
 def weather():
-    return render_template('weather.html', data_now = datetime.datetime.now().date(), data_weather = get_weather_city())
-print(get_weather_city())
+    form = CityForm(csrf_enabled=False)
+    return render_template('weather.html', data_now=datetime.datetime.now().date(),
+                           data_weather=get_data_weather_city(form.city.data), form=form)
