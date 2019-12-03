@@ -21,9 +21,6 @@ def start_message(message):
 
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
-    courses = ''
-    films = ''
-    weather = ''
     if message.text == '/help':
         bot.send_message(message.from_user.id,
                          '-Курс валют на сегодня:\n'
@@ -39,6 +36,7 @@ def get_text_messages(message):
                          '-В кинотеатрах сегодня:\n'
                          '/films')
     elif message.text == '/films':
+        films = ''
         for film in get_data_films():
             films += film['name'] + '\n'
         bot.send_message(message.from_user.id, films)
