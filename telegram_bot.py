@@ -1,8 +1,8 @@
 import telebot
 import re
-from get_films import get_data_films
-from get_courses import get_data_courses
-from get_weather import get_data_weather_city
+from app.get_films import get_data_films
+from app.get_courses import get_data_courses
+from app.get_weather import get_data_weather_city
 
 token = '810680445:AAFfn2x6gfxylbH3pA75fk4DXvNiAoRWPIg'
 
