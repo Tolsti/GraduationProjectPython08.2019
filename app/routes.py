@@ -1,9 +1,6 @@
 import datetime, requests
 from flask import render_template, url_for, flash, redirect
-from app import app
-from app.get_films import get_data_films
-from app.get_courses import get_data_courses, CoursesForm
-from app.get_weather import get_data_weather_city, CityForm
+from app import app, get_data_films, get_data_courses, CoursesForm, get_data_weather_city, CityForm
 
 
 @app.route('/')
