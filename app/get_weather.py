@@ -5,7 +5,7 @@ import requests, flask_wtf, wtforms, wtforms.validators
 # http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID={APIKEY}
 
 
-def get_data_weather_city(city):
+def get_data_weather_city(city='Minsk'):
     if city is None or city == '':
         city = 'Minsk'
     url = 'http://api.openweathermap.org/data/2.5/weather?appid='
