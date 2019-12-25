@@ -25,3 +25,5 @@ def weather():
     form = CityForm(csrf_enabled=False)
     return render_template('weather.html', data_now=datetime.datetime.now().date(),
                            data_weather=get_data_weather_city(form.city.data), form=form)
+if __name__ == '__main__':
+    app.run('127.0.0.1')#(debug=True)
