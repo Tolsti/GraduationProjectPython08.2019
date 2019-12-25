@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\app"
+    "\\app",
+    "\\app\\templates"
   ],
-  "SelectedNode": "\\app\\get_courses.py",
+  "SelectedNode": "\\telegram_bot.py",
   "PreviewInSolutionExplorer": false
 }
