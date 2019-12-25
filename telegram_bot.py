@@ -24,10 +24,10 @@ def start_message(message):
 def get_text_messages(message):
     #обрати внимание на часто используемый код
     #например re.findall(<ЧТО-ТО>, message.text)
-    #answer(что-то>)
+    #bot.send_message(message.from_user.id, <ЧТО-ТО>)
     #читабельности и простоты это не добавляет, поэтому желательно сделать фунции для таких шаблонных действий
     def pattern_search(pattern): return re.findall(pattern, message.text)
-    def answer(answer_text): return answer(answer_text)
+    def answer(answer_text): return bot.send_message(message.from_user.id, answer_text)
 
     if message.text == '/help':
         answer(
