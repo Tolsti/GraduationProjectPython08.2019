@@ -4,6 +4,6 @@
     "\\app",
     "\\app\\templates"
   ],
-  "SelectedNode": "\\telegram_bot.py",
+  "SelectedNode": "\\app\\get_weather.py",
   "PreviewInSolutionExplorer": false
 }

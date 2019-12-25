@@ -6,7 +6,7 @@ import requests, flask_wtf, wtforms, wtforms.validators
 
 
 def get_city_weather_data(city='Minsk'): #get_city_weather_data - информация о погоде в городе. data weather city - город погодной информации.
-    if not city or city is '': # 0, None, False - в логических выражениях эквивалентны False. (x == None) то же, что и (not x)
+    if not city: # 0, None, False, '' - в логических выражениях эквивалентны False. (x == None) то же, что и (not x)
         city = 'Minsk'         # Пустая строка существует в python в единственном экзепляре, поэтому сравнивать с пустой строкой так же можно через is
     url = 'http://api.openweathermap.org/data/2.5/weather?appid=' #хардкод. Подобные константы следует выносить в отдельный файл
     app_id = "94d8b74c4d0c302754e1af1f42419289"
