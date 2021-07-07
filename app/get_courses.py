@@ -2,8 +2,8 @@ import requests, flask_wtf, wtforms, wtforms.validators
 import datetime
 import jinja2
 
-
-def get_data_courses(date=str(datetime.datetime.now().date())):
+#хардкод УРЛ-ов, в остальном - чисто, красиво
+def get_currency_rates_data(date=str(datetime.datetime.now().date())):
     try:
         url = 'http://www.nbrb.by/API/ExRates/Rates?Periodicity=0&onDate=' + date
     except TypeError:
